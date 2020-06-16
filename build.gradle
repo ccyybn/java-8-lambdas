@@ -1,0 +1,37 @@
+apply plugin: "java"
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+ext {
+    slf4jVersion = "1.7.21"
+    logbackVersion = "1.1.7"
+    lombokVersion = "1.12.6"
+    junitVersion = "4.12"
+    springVersion = "4.3.3.RELEASE"
+    springBootVersion = "1.4.1.RELEASE"
+    apacheCommonsVersion = "3:3.4"
+    googleGuavaVersion = "17.0"
+}
+
+dependencies {
+    compile "org.slf4j:slf4j-api:$slf4jVersion"
+    compile "ch.qos.logback:logback-classic:$logbackVersion"
+    compile "ch.qos.logback:logback-core:$logbackVersion"
+    compile "org.slf4j:log4j-over-slf4j:$slf4jVersion"
+    compile "org.projectlombok:lombok:$lombokVersion"
+    compile "org.springframework:spring-context:$springVersion"
+    compile "org.springframework.boot:spring-boot-starter:$springBootVersion"
+    compile "org.apache.commons:commons-lang$apacheCommonsVersion"
+    compile "com.google.guava:guava:$googleGuavaVersion"
+
+    testCompile "junit:junit:$junitVersion"
+}
+
+
+buildscript {
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.2.RELEASE")
+    }
+}
